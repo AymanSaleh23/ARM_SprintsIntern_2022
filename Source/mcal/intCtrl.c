@@ -12,7 +12,12 @@
 /*********************************************************************************************************************************************************
  *	INCLUDES
  ********************************************************************************************************************************************************/
+#include "../common/STD_TYPES.h"
+#include "../common/Mcu_Hw.h"
 
+#include "intCtrl_Types.h"
+#include "intCtrl_Cfg.h"
+#include "intCtrl.h"
 
 /*********************************************************************************************************************************************************
  *	LOCAL MACROS CONSTANTS\FUNCTIONS
@@ -40,16 +45,26 @@
  ********************************************************************************************************************************************************/
 
 /*********************************************************************************************************************************************************
- *	\Syntax				:	returnType FunctionName (<Type> parameters)
- *	\Description		:	Describe service of this function
+ *	\Syntax					:	void IntCtrl_Init(void)
+ *	\Description		:	Initalize NVIC/SCB by parsing configuration 
+											into NVIC/SCB registers.
  *
- *	\Sync\Async			:	Synchronous/Asynchronous
- *	\Reentrancy			:	Reentrant/Non Reentrant
- *	\Parameters	(in)	:	parameterName	parameter description / None
- *	\Parameters	(out)	:	parameterName	parameter description / None
- *	\Return value		:	returnType	Value1(OK)
-										Value2(NOK) 
+ *	\Sync\Async				:	Synchronous
+ *	\Reentrancy				:	Non Reentrant
+ *	\Parameters	(in)	:	None
+ *	\Parameters	(out)	:	None
+ *	\Return value			:	None
  ********************************************************************************************************************************************************/
+
+void IntCtrl_Init(void){
+
+	/*
+	- Configure Group/SubGrouping in APINT in SCB...
+	- Assign Group/SubGroup Priority in NVIC_PRIx and SCB_SYSPRIx registers.
+	- Enable/Disable based on configuration NVIC_ENx and SCB_Sys registers.	
+	*/
+}
+
 
 /*****			Type Function Here		*******/
 
